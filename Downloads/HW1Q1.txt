@@ -1,0 +1,16 @@
+Address		Assembly	Comments
+31		mov R1, 25	write 25 to register R1
+32		mov R2, 7	write 1 to register R2
+33		mov [R1], R2	move the contents of R2 to the address corresponding to the value stored in R1
+34		mov R0, [R1]
+35		mov R3, 6	write 6 to R3
+36		mov R4, 0	initialize counter variable
+37		mov R5, 0	initialize result register
+38		mov R1, 10
+39 		cmp R3, R4
+40		je 44
+41		add R5, R0
+42		inc R4
+43		jmp 39
+44		mov [R6], R5
+45		halt

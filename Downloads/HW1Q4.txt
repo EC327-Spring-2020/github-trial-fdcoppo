@@ -1,0 +1,30 @@
+Address		Assembly	Comments
+31		mov R1, 3	
+32		mov R4, 4		
+33		mov [R1], R4	;initialize dividend variable
+34		mov R2, 4
+35		mov R4, 0		
+36		mov [R2], R4	;initialize divisor variable
+37		mov R1, [R1]	;retrieve dividend from memory
+38		mov R2, [R2]	;retrieve divisor from memory
+39		mov R3, 0
+40		mov R4, 0	;initialize counter variable	
+41		cmp R2, R3	
+42		je 56		;halt if divisor is 0
+43		cmp R3, R1
+44		je 54		;if the result is zero, you're done
+45		sub R1, R2
+46		cmp R1, R2	;if subtractor is equal to divisor variable
+47		je 52
+48		cmp R1, R3
+49		je 54		;if the result is zero, you're done
+50		inc R4
+51		jmp 45
+52		inc R4
+53		inc R4
+54		mov R0, 12	
+55		mov [R0], R4	;store result in memory cell 12
+56		halt
+
+Simulator HEX: 90439106b04490849100b084c041c08290c091008083403880c14036604280424034804340361004202d10041004900cb0040000
+

@@ -1,0 +1,23 @@
+Address		Assembly	Comments
+31		mov R1, 1
+32		mov R0, 0
+33		mov [R1], R0	;initialize memory cell 1
+34		mov R2, 2
+35		mov [R2], R1	;initialize memory cell 2
+36		mov R3, 3	;initialize memory address for memory cell 3 in register R3
+37		mov R4, 4	;initialize memory address for memory cell 4 in register 4
+38		mov R5, 9	;set maximum number of memory cells to fill with fibonacci number
+39		cmp R3, R5	;compare number of cells to fill with counter
+40		je 50
+41		add R0, R1	;add the value of the second cell to the first
+42		add R1, R0	;add the value of the first cell to the second
+43		mov [R3], R0	;store the value of the first cell obtained in the loop to memory cell 3
+44		mov [R4], R1	;store value of second cell obtained from loop in memory cell 4
+45		inc R3		;increment the register for "first memory cell" assignment
+46		inc R3		;increment the register for "first memory cell" assignment
+47		inc R4		;increment the register for "second memory cell" assignment
+48		inc R4		;increment the register for "second memory cell" assignment		
+49		jmp 38
+50		halt
+
+Simulator Hex: 90419000b0409082b08190c39104914980c5403250015040b0c0b101100310031004100420270000

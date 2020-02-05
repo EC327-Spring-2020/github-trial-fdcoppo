@@ -1,0 +1,26 @@
+Address		Assembly		Comments
+31		mov R1, 1		
+32		mov R4, 5		
+33		mov [R1], R4		;initialize variable a
+34		mov R2, 2
+35		mov R4, 8		
+36		mov [R2], R4		;initialize variable b
+37		mov R3, 3
+38		mov R4, 7		
+39		mov [R3], R4		;initialize variable c
+40		mov R4, 0		
+41		mov R0, [R2]		;retreive variable b
+42		mov R2, [R3]		;retreive variable c
+43		mov R3, [R1]		;retreive variable a
+44		mov R1, 0
+45		cmp R0, R4		;compare multiplication counter variable with desired value
+46		je 50
+47		inc R4			;increment multiplication counter variable
+48		add R1, R3		;perform addition for multiplication
+49		jmp 45
+50		add R1, R2		;add variable c to (a*b)
+51		mov R2, 4		;set memory address R2 to 4
+52		mov [R2], R1		;store final result in memory address R2
+53		halt
+
+Simulator Hex: 90419105b04490829108b08490c39107b0c49100c002c083c0c190408004403210045043202d50429084b0810000
